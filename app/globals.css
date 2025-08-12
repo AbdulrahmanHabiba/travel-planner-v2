@@ -1,0 +1,107 @@
+
+@import "tailwindcss";
+@plugin "flowbite-react/plugin/tailwindcss";
+@source "../.flowbite-react/class-list.json";
+@import "uploadthing/tw/v4";
+@source "../node_modules/@uploadthing/react/dist";
+
+:root {
+  --radius: 0.625rem;
+  --card: #fff;
+  --card-foreground: #1e293b;  
+  --primary: #3b82f6;  
+  --primary-foreground: #fff;
+  --secondary: #f5f7fa;
+  --secondary-foreground: #334155; 
+  --muted: #e0e7ef; 
+  --muted-foreground: #64748b; 
+  --accent: #fbbf24; 
+  --accent-foreground: #1e293b;
+  --destructive: #f87171;
+  --border: #e2e8f0; 
+  --input: #e2e8f0;
+  --ring: #a5b4fc; 
+  --background: #f5f7fa;
+  --foreground: #1e293b; 
+}
+
+/* Dark theme variables when `.dark` is on `<html>` */
+:root.dark {
+  --card: #0b1220;
+  --card-foreground: #e5e7eb;
+  --primary: #60a5fa;
+  --primary-foreground: #0b1220;
+  --secondary: #0b0f19;
+  --secondary-foreground: #e5e7eb;
+  --muted: #111827;
+  --muted-foreground: #cbd5e1;
+  --accent: #f59e0b;
+  --accent-foreground: #0b1220;
+  --destructive: #dc2626;
+  --border: #1f2937;
+  --input: #1f2937;
+  --ring: #818cf8;
+  --background: #0b0f19; 
+  --foreground: #f3f4f6; 
+}
+
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  color: var(--secondary);
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Custom Tailwind utilities for global theming */
+@utility page-surface {
+  @apply bg-gradient-to-b from-white to-gray-50 dark:from-gray-950 dark:to-gray-900;
+}
+
+@utility page-text {
+  @apply  dark:text-gray-100!;
+}
+
+/* Utility to apply on any section explicitly to preserve dark: variants */
+@utility page-section {
+  @apply page-surface page-text;
+}
+
+/* Apply to all sections by default */
+section {
+  @apply page-section!;
+}
+
+.bg-surface {
+  background: var(--background) !important;
+}
+.text-main {
+  color: var(--foreground) !important;
+}
+.bg-card-surface {
+  background: var(--card) !important;
+}
+.text-card-main {
+  color: var(--card-foreground) !important;
+}
+
+.text-footer-link {
+  color: var(--primary);
+}
+:root.dark .text-footer-link {
+  color: var(--primary-foreground);
+}
+
+footer {
+    margin-top: 2rem;
+}
+
+.button-outline {
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--card-foreground);
+}
+.border-card-main {
+  border-color: var(--card-foreground) !important;
+}
