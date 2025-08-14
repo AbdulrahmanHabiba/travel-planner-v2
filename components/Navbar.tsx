@@ -3,8 +3,9 @@ import { login, logout } from "@/lib/auth-actions";
 import { Session } from "next-auth";
 import Link from "next/link";
 import UserAvatar from "@/components/ui/avatar";
-import { LogIn, LogOut, Sun, Moon, MapPinCheck, Plane, Globe } from "lucide-react";
+import { LogOut, MapPinCheck, Plane, Globe } from "lucide-react";
 import {ThemeToggle} from "@/components/theme-toggle"
+import AuthDropdown from "@/components/AuthDropdown";
 export default function Navbar({ session }: { session: Session | null }) {
 
   return (
@@ -59,17 +60,8 @@ export default function Navbar({ session }: { session: Session | null }) {
                 </button>
               </div>
             </>
-          ) : (
-            <button
-              className="inline-flex items-center justify-center rounded-md p-2 sm:py-1  border border-card-main bg-surface text-main transition-colors"
-              onClick={login}
-            >
-
-              <div className="flex w-auto">
-                <span className="hidden sm:block mr-1">Sign In</span>
-                <LogIn className="w-4 h-4 sm:w-5 sm:h-5" />
-              </div>
-            </button>
+          ) : (    
+            <AuthDropdown />
           )}
 
   <ThemeToggle />
