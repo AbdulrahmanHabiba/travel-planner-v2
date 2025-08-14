@@ -1,19 +1,11 @@
-"use client";
 
 import { login, logout } from "@/lib/auth-actions";
 import { Session } from "next-auth";
 import Link from "next/link";
 import UserAvatar from "@/components/ui/avatar";
 import { LogIn, LogOut, Sun, Moon, MapPinCheck, Plane, Globe } from "lucide-react";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
-
+import {ThemeToggle} from "@/components/theme-toggle"
 export default function Navbar({ session }: { session: Session | null }) {
-  const { setTheme, resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   return (
     <nav className="bg-surface text-main shadow-md py-3 sm:py-4 border-b">
@@ -80,20 +72,7 @@ export default function Navbar({ session }: { session: Session | null }) {
             </button>
           )}
 
-          <button
-            aria-label="Toggle theme"
-            onClick={() =>
-              setTheme(resolvedTheme === "dark" ? "light" : "dark")
-            }
-            className="inline-flex items-center justify-center rounded-md p-2 border border-card-main bg-surface text-main transition-colors"
-
-          >
-            {resolvedTheme === "dark" ? (
-              <Sun className="h-4 w-4" />
-            ) : (
-              <Moon className="h-4 w-4" />
-            )}
-          </button>
+  <ThemeToggle />
         </div>
       </div>
     </nav>

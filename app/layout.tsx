@@ -5,7 +5,6 @@ import Navbar from "@/components/Navbar";
 import { auth } from "@/auth";
 import Footer from "@/components/ui/footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],

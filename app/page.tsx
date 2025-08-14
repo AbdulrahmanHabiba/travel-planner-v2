@@ -2,10 +2,10 @@ import React from "react";
 import { Map as MapIcon } from "lucide-react";
 import { auth } from "@/auth";
 import AuthButton from "@/components/auth-button";
-
 export default async function LandingPage() {
   const session = await auth();
   const isLoggedIn = !!session?.user;
+  
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -40,6 +40,7 @@ export default async function LandingPage() {
                       </svg>
                       <span className="ml-2">Log in</span>
                     </div>
+                    
                   )}
                 </AuthButton>
               </div>

@@ -1,107 +1,316 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@import "tailwindcss";
-@plugin "flowbite-react/plugin/tailwindcss";
-@source "../.flowbite-react/class-list.json";
-@import "uploadthing/tw/v4";
-@source "../node_modules/@uploadthing/react/dist";
+/* نظام ألوان عصري مخصص للسفر مع gradients وحركات جميلة */
 
-:root {
-  --radius: 0.625rem;
-  --card: #fff;
-  --card-foreground: #1e293b;  
-  --primary: #3b82f6;  
-  --primary-foreground: #fff;
-  --secondary: #f5f7fa;
-  --secondary-foreground: #334155; 
-  --muted: #e0e7ef; 
-  --muted-foreground: #64748b; 
-  --accent: #fbbf24; 
-  --accent-foreground: #1e293b;
-  --destructive: #f87171;
-  --border: #e2e8f0; 
-  --input: #e2e8f0;
-  --ring: #a5b4fc; 
-  --background: #f5f7fa;
-  --foreground: #1e293b; 
+@layer base {
+  :root {
+    /* خلفيات أساسية */
+    --background: 240 10% 98%;
+    --foreground: 220 12% 15%;
+
+    /* ألوان البطاقات */
+    --card: 0 0% 100%;
+    --card-foreground: 220 12% 15%;
+
+    /* النوافذ المنبثقة */
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 12% 15%;
+
+    /* اللون الأساسي - أزرق سفر جميل */
+    --primary: 211 100% 50%;
+    --primary-foreground: 0 0% 98%;
+    --primary-light: 211 100% 85%;
+    --primary-dark: 211 100% 35%;
+
+    /* الثانوي - لون دافئ للسفر */
+    --secondary: 35 85% 95%;
+    --secondary-foreground: 35 85% 25%;
+
+    /* المكتوم */
+    --muted: 215 20% 94%;
+    --muted-foreground: 215 16% 46%;
+
+    /* التأكيد - لون مميز */
+    --accent: 35 100% 88%;
+    --accent-foreground: 35 100% 25%;
+
+    /* المدمر */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* الحدود والدخل */
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 211 100% 50%;
+
+    /* نصف القطر */
+    --radius: 0.75rem;
+
+    /* ألوان الشريط الجانبي */
+    --sidebar-background: 240 10% 98%;
+    --sidebar-foreground: 220 12% 15%;
+    --sidebar-primary: 211 100% 50%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 35 85% 95%;
+    --sidebar-accent-foreground: 35 85% 25%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 211 100% 50%;
+
+    /* Gradients جميلة للسفر */
+    --gradient-primary: linear-gradient(135deg, hsl(211 100% 50%), hsl(195 100% 65%));
+    --gradient-secondary: linear-gradient(135deg, hsl(35 100% 75%), hsl(45 100% 85%));
+    --gradient-hero: linear-gradient(135deg, hsl(211 100% 50%) 0%, hsl(195 100% 65%) 50%, hsl(35 100% 75%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(215 20% 96%) 100%);
+    
+    /* ظلال أنيقة */
+    --shadow-soft: 0 4px 20px -8px hsl(211 100% 50% / 0.15);
+    --shadow-elegant: 0 12px 40px -12px hsl(211 100% 50% / 0.25);
+    --shadow-glow: 0 0 30px hsl(211 100% 50% / 0.3);
+    
+    /* حركات سلسة */
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .dark {
+    /* خلفيات مظلمة أنيقة */
+    --background: 220 15% 8%;
+    --foreground: 210 40% 95%;
+
+    /* بطاقات مظلمة */
+    --card: 220 15% 12%;
+    --card-foreground: 210 40% 95%;
+
+    /* نوافذ منبثقة مظلمة */
+    --popover: 220 15% 12%;
+    --popover-foreground: 210 40% 95%;
+
+    /* أساسي مضيء في المظلم */
+    --primary: 211 100% 65%;
+    --primary-foreground: 220 15% 8%;
+    --primary-light: 211 100% 85%;
+    --primary-dark: 211 100% 45%;
+
+    /* ثانوي مظلم */
+    --secondary: 220 15% 18%;
+    --secondary-foreground: 210 40% 95%;
+
+    /* مكتوم مظلم */
+    --muted: 220 15% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    /* تأكيد مظلم */
+    --accent: 220 15% 18%;
+    --accent-foreground: 210 40% 95%;
+
+    /* مدمر مظلم */
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 210 40% 95%;
+
+    /* حدود ودخل مظلم */
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 211 100% 65%;
+
+    /* شريط جانبي مظلم */
+    --sidebar-background: 220 15% 8%;
+    --sidebar-foreground: 210 40% 95%;
+    --sidebar-primary: 211 100% 65%;
+    --sidebar-primary-foreground: 220 15% 8%;
+    --sidebar-accent: 220 15% 18%;
+    --sidebar-accent-foreground: 210 40% 95%;
+    --sidebar-border: 220 15% 18%;
+    --sidebar-ring: 211 100% 65%;
+
+    /* Gradients مظلمة جميلة */
+    --gradient-primary: linear-gradient(135deg, hsl(211 100% 65%), hsl(195 100% 75%));
+    --gradient-secondary: linear-gradient(135deg, hsl(35 85% 65%), hsl(45 85% 75%));
+    --gradient-hero: linear-gradient(135deg, hsl(211 100% 65%) 0%, hsl(195 100% 75%) 50%, hsl(35 85% 65%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(220 15% 12%) 0%, hsl(220 15% 18%) 100%);
+    
+    /* ظلال مظلمة متوهجة */
+    --shadow-soft: 0 4px 20px -8px hsl(211 100% 65% / 0.2);
+    --shadow-elegant: 0 12px 40px -12px hsl(211 100% 65% / 0.3);
+    --shadow-glow: 0 0 40px hsl(211 100% 65% / 0.4);
+  }
 }
 
-/* Dark theme variables when `.dark` is on `<html>` */
-:root.dark {
-  --card: #0b1220;
-  --card-foreground: #e5e7eb;
-  --primary: #60a5fa;
-  --primary-foreground: #0b1220;
-  --secondary: #0b0f19;
-  --secondary-foreground: #e5e7eb;
-  --muted: #111827;
-  --muted-foreground: #cbd5e1;
-  --accent: #f59e0b;
-  --accent-foreground: #0b1220;
-  --destructive: #dc2626;
-  --border: #1f2937;
-  --input: #1f2937;
-  --ring: #818cf8;
-  --background: #0b0f19; 
-  --foreground: #f3f4f6; 
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    transition: var(--transition-smooth);
+  }
+
+  /* تحسينات للنصوص */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  /* تحسين الروابط */
+  a {
+    @apply transition-colors duration-300;
+  }
 }
 
+@layer components {
+  /* بطاقة جميلة مع تأثيرات */
+  .travel-card {
+    @apply bg-card border border-border rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1;
+    background: var(--gradient-card);
+  }
 
+  /* زر بتدرج جميل */
+  .btn-gradient {
+    background: var(--gradient-primary);
+    @apply text-white border-0 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105;
+  }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: var(--background);
-  color: var(--secondary);
-  transition: background 0.3s, color 0.3s;
-}
+  /* Hero section مع خلفية متدرجة */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
 
-/* Custom Tailwind utilities for global theming */
-@utility page-surface {
-  @apply bg-gradient-to-b from-white to-gray-50 dark:from-gray-950 dark:to-gray-900;
-}
+  /* تأثير توهج للعناصر المهمة */
+  .glow-effect {
+    box-shadow: var(--shadow-glow);
+  }
 
-@utility page-text {
-  @apply  dark:text-gray-100!;
-}
+  /* تأثير hover للأيقونات */
+  .icon-hover {
+    @apply transition-all duration-300 hover:scale-110 hover:rotate-6;
+  }
 
-/* Utility to apply on any section explicitly to preserve dark: variants */
-@utility page-section {
-  @apply page-surface page-text;
-}
+  /* شريط تنقل شفاف */
+  .nav-glass {
+    @apply backdrop-blur-md bg-background/80 border-b border-border/50;
+  }
 
-/* Apply to all sections by default */
-section {
-  @apply page-section!;
-}
-
-.bg-surface {
-  background: var(--background) !important;
-}
-.text-main {
-  color: var(--foreground) !important;
-}
-.bg-card-surface {
-  background: var(--card) !important;
-}
-.text-card-main {
-  color: var(--card-foreground) !important;
-}
-
-.text-footer-link {
-  color: var(--primary);
-}
-:root.dark .text-footer-link {
-  color: var(--primary-foreground);
+  /* نص متدرج */
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 }
 
-footer {
-    margin-top: 2rem;
+@layer utilities {
+  /* حركات مخصصة */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out;
+  }
+
+  .animate-bounce-in {
+    animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  /* تأثيرات hover */
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl;
+  }
+
+  .hover-glow {
+    @apply transition-all duration-300;
+  }
+  .hover-glow:hover {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* gradients utilities */
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .bg-gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
 }
 
-.button-outline {
-  border-width: 1px;
-  border-style: solid;
-  border-color: var(--card-foreground);
+/* Keyframes للحركات */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
-.border-card-main {
-  border-color: var(--card-foreground) !important;
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* تحسينات إضافية للتجربة */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-muted;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gradient-primary);
+  @apply rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply opacity-80;
+}
+
+/* تحسين الانتقالات للوضع المظلم */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }

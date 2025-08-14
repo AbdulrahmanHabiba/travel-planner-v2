@@ -1,13 +1,15 @@
-// tailwind.config.ts
-import type { Config } from "tailwindcss"
+import flowbiteReact from "flowbite-react/plugin/tailwindcss";
 
-const config: Config = {
+/** @type {import('tailwindcss').Config} */
+
+const config  = {
   darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
+    ".flowbite-react\\class-list.json"
   ],
   theme: {
     extend: {
@@ -63,7 +65,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [flowbiteReact],
 }
 
 export default config
