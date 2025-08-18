@@ -1,7 +1,4 @@
-"use client";
 import { loginWithGithub , loginWithGoogle} from '@/lib/auth-actions';
-import { useState } from 'react';
-
 
 import React from 'react'
 
@@ -10,7 +7,7 @@ export function LoginButton({className} : {className? :string}) {
   return (
     <div className={`flex flex-col sm:flex-row gap-3 ${className || ""} `}>
       <button
-        onClick={() => signIn("google")}
+        onClick={() => loginWithGoogle()}
         className="flex items-center justify-center gap-2 px-4 py-2 rounded bg-white text-gray-700 border hover:bg-gray-100 transition"
       >
         <svg
@@ -28,7 +25,7 @@ export function LoginButton({className} : {className? :string}) {
       </button>
 
       <button
-        onClick={() => signIn("github")}
+        onClick={() => loginWithGithub()}
         className="flex items-center justify-center gap-2 px-4 py-2 rounded bg-black text-white hover:bg-gray-800 transition"
       >
         <svg

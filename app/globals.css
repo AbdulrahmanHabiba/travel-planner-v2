@@ -2,53 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
-/* نظام ألوان عصري مخصص للسفر مع gradients وحركات جميلة */
 
 @layer base {
   :root {
-    /* خلفيات أساسية */
     --background: 240 10% 98%;
     --foreground: 220 12% 15%;
 
-    /* ألوان البطاقات */
     --card: 0 0% 100%;
     --card-foreground: 220 12% 15%;
 
-    /* النوافذ المنبثقة */
     --popover: 0 0% 100%;
     --popover-foreground: 220 12% 15%;
 
-    /* اللون الأساسي - أزرق سفر جميل */
     --primary: 211 100% 50%;
     --primary-foreground: 0 0% 98%;
     --primary-light: 211 100% 85%;
     --primary-dark: 211 100% 35%;
 
-    /* الثانوي - لون دافئ للسفر */
     --secondary: 35 85% 95%;
     --secondary-foreground: 35 85% 25%;
 
-    /* المكتوم */
     --muted: 215 20% 94%;
     --muted-foreground: 215 16% 46%;
 
-    /* التأكيد - لون مميز */
     --accent: 35 100% 88%;
     --accent-foreground: 35 100% 25%;
 
-    /* المدمر */
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    /* الحدود والدخل */
     --border: 214 32% 91%;
     --input: 214 32% 91%;
     --ring: 211 100% 50%;
 
-    /* نصف القطر */
     --radius: 0.75rem;
 
-    /* ألوان الشريط الجانبي */
     --sidebar-background: 240 10% 98%;
     --sidebar-foreground: 220 12% 15%;
     --sidebar-primary: 211 100% 50%;
@@ -58,63 +46,50 @@
     --sidebar-border: 214 32% 91%;
     --sidebar-ring: 211 100% 50%;
 
-    /* Gradients جميلة للسفر */
     --gradient-primary: linear-gradient(135deg, hsl(211 100% 50%), hsl(195 100% 65%));
     --gradient-secondary: linear-gradient(135deg, hsl(35 100% 75%), hsl(45 100% 85%));
     --gradient-hero: linear-gradient(135deg, hsl(211 100% 50%) 0%, hsl(195 100% 65%) 50%, hsl(35 100% 75%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(215 20% 96%) 100%);
     
-    /* ظلال أنيقة */
     --shadow-soft: 0 4px 20px -8px hsl(211 100% 50% / 0.15);
     --shadow-elegant: 0 12px 40px -12px hsl(211 100% 50% / 0.25);
     --shadow-glow: 0 0 30px hsl(211 100% 50% / 0.3);
     
-    /* حركات سلسة */
     --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
   .dark {
-    /* خلفيات مظلمة أنيقة */
     --background: 220 15% 8%;
     --foreground: 210 40% 95%;
 
-    /* بطاقات مظلمة */
     --card: 220 15% 12%;
     --card-foreground: 210 40% 95%;
 
-    /* نوافذ منبثقة مظلمة */
     --popover: 220 15% 12%;
     --popover-foreground: 210 40% 95%;
 
-    /* أساسي مضيء في المظلم */
     --primary: 211 100% 65%;
     --primary-foreground: 220 15% 8%;
     --primary-light: 211 100% 85%;
     --primary-dark: 211 100% 45%;
 
-    /* ثانوي مظلم */
     --secondary: 220 15% 18%;
     --secondary-foreground: 210 40% 95%;
 
-    /* مكتوم مظلم */
     --muted: 220 15% 18%;
     --muted-foreground: 215 20% 65%;
 
-    /* تأكيد مظلم */
     --accent: 220 15% 18%;
     --accent-foreground: 210 40% 95%;
 
-    /* مدمر مظلم */
     --destructive: 0 62% 45%;
     --destructive-foreground: 210 40% 95%;
 
-    /* حدود ودخل مظلم */
     --border: 220 15% 18%;
     --input: 220 15% 18%;
     --ring: 211 100% 65%;
 
-    /* شريط جانبي مظلم */
     --sidebar-background: 220 15% 8%;
     --sidebar-foreground: 210 40% 95%;
     --sidebar-primary: 211 100% 65%;
@@ -124,13 +99,11 @@
     --sidebar-border: 220 15% 18%;
     --sidebar-ring: 211 100% 65%;
 
-    /* Gradients مظلمة جميلة */
     --gradient-primary: linear-gradient(135deg, hsl(211 100% 65%), hsl(195 100% 75%));
     --gradient-secondary: linear-gradient(135deg, hsl(35 85% 65%), hsl(45 85% 75%));
     --gradient-hero: linear-gradient(135deg, hsl(211 100% 65%) 0%, hsl(195 100% 75%) 50%, hsl(35 85% 65%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(220 15% 12%) 0%, hsl(220 15% 18%) 100%);
     
-    /* ظلال مظلمة متوهجة */
     --shadow-soft: 0 4px 20px -8px hsl(211 100% 65% / 0.2);
     --shadow-elegant: 0 12px 40px -12px hsl(211 100% 65% / 0.3);
     --shadow-glow: 0 0 40px hsl(211 100% 65% / 0.4);
@@ -147,51 +120,42 @@
     transition: var(--transition-smooth);
   }
 
-  /* تحسينات للنصوص */
   h1, h2, h3, h4, h5, h6 {
     @apply font-semibold tracking-tight;
   }
 
-  /* تحسين الروابط */
   a {
     @apply transition-colors duration-300;
   }
 }
 
 @layer components {
-  /* بطاقة جميلة مع تأثيرات */
   .travel-card {
     @apply bg-card border border-border rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1;
     background: var(--gradient-card);
   }
 
-  /* زر بتدرج جميل */
   .btn-gradient {
     background: var(--gradient-primary);
     @apply text-white border-0 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105;
   }
 
-  /* Hero section مع خلفية متدرجة */
   .hero-gradient {
     background: var(--gradient-hero);
   }
 
-  /* تأثير توهج للعناصر المهمة */
   .glow-effect {
     box-shadow: var(--shadow-glow);
   }
 
-  /* تأثير hover للأيقونات */
   .icon-hover {
     @apply transition-all duration-300 hover:scale-110 hover:rotate-6;
   }
 
-  /* شريط تنقل شفاف */
   .nav-glass {
     @apply backdrop-blur-md bg-background/80 border-b border-border/50;
   }
 
-  /* نص متدرج */
   .text-gradient {
     background: var(--gradient-primary);
     -webkit-background-clip: text;
@@ -201,7 +165,6 @@
 }
 
 @layer utilities {
-  /* حركات مخصصة */
   .animate-float {
     animation: float 3s ease-in-out infinite;
   }
@@ -218,7 +181,6 @@
     animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
-  /* تأثيرات hover */
   .hover-lift {
     @apply transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl;
   }
@@ -244,7 +206,6 @@
   }
 }
 
-/* Keyframes للحركات */
 @keyframes float {
   0%, 100% {
     transform: translateY(0px);
@@ -292,7 +253,6 @@
   }
 }
 
-/* تحسينات إضافية للتجربة */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -310,7 +270,6 @@
   @apply opacity-80;
 }
 
-/* تحسين الانتقالات للوضع المظلم */
 * {
   transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }

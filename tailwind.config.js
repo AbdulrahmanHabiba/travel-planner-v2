@@ -43,7 +43,6 @@ const config  = {
           foreground: "hsl(var(--destructive-foreground))",
         },
 
-        // ألوان الشريط الجانبي
         sidebar: {
           background: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

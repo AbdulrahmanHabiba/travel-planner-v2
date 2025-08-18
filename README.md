@@ -1,64 +1,110 @@
-# Travel Planner
+# 🌍 Travel Planner
 
-A modern web app to help you plan your trips around the world, organize destinations, and create detailed itineraries for each journey.
+A modern, feature-rich web application designed to help users **plan trips, organize destinations, and create detailed itineraries** for seamless travel experiences.
 
-## Features
+---
 
-- Sign in with GitHub
-- Create, edit, and manage trips with multiple locations
-- Interactive map and 3D globe visualization
-- Track visited countries and travel statistics
-- Modern UI with dark mode support
+## ✨ Features
 
-## Technologies Used
+- 🔐 **GitHub Authentication** – Secure login with your GitHub account.
+- 🗺️ **Trip Management** – Create, edit, and manage multiple trips with detailed itineraries and locations.
+- 🌍 **Interactive Visualizations** – Explore destinations with **React Leaflet** maps and a **3D globe** using `react-globe.gl`.
+- 📊 **Travel Statistics** – Track visited countries and view personalized travel insights.
+- 🎨 **Modern UI** – Sleek, responsive design with **dark mode** support.
+- 🖼️ **Image Uploads** – Upload and manage trip-related images via **UploadThing**.
 
-- Next.js 15
-- TypeScript
-- Prisma + PostgreSQL
-- TailwindCSS
-- Flowbite React
-- React Leaflet & react-globe.gl
-- UploadThing for image uploads
-- NextAuth for authentication
+---
 
-## Getting Started
+## 🛠️ Technologies Used
 
-1. Install dependencies:
+- **Frontend**: Next.js 15, TypeScript, TailwindCSS, Flowbite React
+- **Backend**: Next.js API Routes, Prisma, PostgreSQL
+- **Authentication**: NextAuth
+- **Maps & Visualization**: React Leaflet, react-globe.gl
+- **File Uploads**: UploadThing
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v16 or higher)
+- PostgreSQL database
+- Geoapify API key for maps
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/AbdulrahmanHabiba/travel-planner-v2.git
+   cd travel-planner-v2
+   ```
+
+2. Install dependencies:
+
    ```bash
    npm install
    ```
-2. Create a PostgreSQL database and add environment variables in `.env`:
-   ```
+
+3. Create a `.env` file in the root directory and add:
+
+   ```ini
    DATABASE_URL=postgres://user:password@localhost:5432/dbname
    GEOAPIFY_API_KEY=your_api_key
+   NEXTAUTH_SECRET=your_nextauth_secret
+   UPLOADTHING_SECRET=your_uploadthing_secret
    ```
-3. Run Prisma migrations:
+
+4. Setup the database with Prisma:
+
    ```bash
    npx prisma migrate dev
    ```
-4. Start the development server:
+
+5. Run the development server:
+
    ```bash
    npm run dev
    ```
 
-## Project Structure
-
-- `app/` - Application pages
-- `components/` - UI components
-- `lib/` - Utilities and server functions
-- `prisma/` - Database schema and seeds
-- `public/` - Static files and images
-
-## Contributing
-
-Contributions and suggestions are welcome! Open an Issue or Pull Request on [GitHub](https://github.com/username/travel-planner).
-
-## License
-
-MIT License
+6. Open [**http://localhost:3000**](http://localhost:3000) 🎉
 
 ---
 
-**Contact:**  
-[Abdulrahman Habiba](mailto:abdulrahman@example.com)
+## 📂 Project Structure
 
+- `app/` – Next.js routes & API endpoints
+- `components/` – Reusable UI components
+- `lib/` – Utility functions & logic
+- `prisma/` – Prisma schema & migrations
+- `public/` – Static assets (images, icons)
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! To contribute:
+
+1. Fork the repository.
+2. Create a new branch:
+   ```bash
+   git checkout -b feature/your-feature
+   ```
+3. Commit & push your changes.
+4. Open a Pull Request 🚀
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+## 📬 Contact
+
+For feedback or questions: **Abdulrahman Habiba**
+
+Happy travels! 🌍✈️
